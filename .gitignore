@@ -1,3 +1,6 @@
+# Separate project (own git repo)
+UAIPAY/
+
 # Unrelated documents / source materials (not part of the website)
 *.pdf
 *.zip
@@ -7,6 +10,8 @@ DOCUMENTOS/
 imagens pdsf/
 logos extraidos/
 .claude/
+.mcp.json
+.env
 
 # Extra/unused video files (only video2-final.mp4 is used by the site)
 video.mp4
