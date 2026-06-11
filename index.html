@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oren — Global Financial Solutions</title>
+  <meta name="description" content="Uma holding que conecta pagamentos, capital e expansão global entre Brasil e Estados Unidos. Raízes profundas, crescimento sem limites.">
+  <meta property="og:title" content="Oren — Global Financial Solutions">
+  <meta property="og:description" content="Transformamos capital e patrimônio em crescimento sólido, conectando o Brasil e os Estados Unidos.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#060F0D">
+
+  <!-- Geist: modern grotesque sans for headlines -->
+  <!-- Inter: body & UI (brand font) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── RESET ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img, video { max-width: 100%; display: block; }
+
+    /* ─── DESIGN TOKENS ─── */
+    :root {
+      --ink:     #060F0D;      /* near-black */
+      --g900:    #0A1E18;
+      --g800:    #0D3328;
+      --g750:    #0D4537;
+      --g700:    #0D5C46;
+      --g600:    #1A7A5C;
+      --g500:    #22A878;
+      --g400:    #3EC87C;
+      --g300:    #6EDE6E;
+      --g200:    #AAEDAA;
+      --g100:    #DCF5E3;
+      --cream:   #EDE8DE;
+      --white:   #F5F3EF;
+      --ease:    cubic-bezier(0.4, 0, 0.2, 1);
+      --spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+      --t200:    0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --t400:    0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+      /* Typography scale */
+      --display:   'Geist', -apple-system, sans-serif;
+      --body:      'Inter', -apple-system, sans-serif;
+    }
+
+    body {
+      font-family: var(--body);
+      background: var(--ink);
+      color: var(--cream);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ─── BILINGUAL ─── */
+    .en { display: none; }
+    body.lang-en .pt { display: none; }
+    body.lang-en .en { display: revert; }
+
+    /* ─── NAVBAR ─── */
+    #nav {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(calc(100% - 32px), 1360px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 22px;
+      background: rgba(6, 15, 13, 0.6);
+      backdrop-filter: blur(28px) saturate(140%);
+      -webkit-backdrop-filter: blur(28px) saturate(140%);
+      border: 1px solid rgba(62, 200, 124, 0.10);
+      border-radius: 14px;
+      z-index: 9999;
+      transition: background var(--t400), border-color var(--t400);
+    }
+
+    #nav.scrolled {
+      background: rgba(6, 15, 13, 0.88);
+      border-color: rgba(62, 200, 124, 0.16);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      color: var(--cream);
+      flex-shrink: 0;
+    }
+
+    .nav-logo-text {
+      font-family: var(--body);
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(237, 232, 222, 0.55);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: color var(--t200);
+    }
+
+    .nav-links a:hover { color: var(--cream); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lang-toggle {
+      display: flex;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .lang-btn {
+      padding: 5px 11px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      color: rgba(237, 232, 222, 0.4);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--body);
+      transition: all var(--t200);
+    }
+
+    .lang-btn.active {
+      background: rgba(62, 200, 124, 0.16);
+      color: var(--g300);
+    }
+
+    .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      background: var(--g750);
+      color: var(--cream);
+      border: 1px solid rgba(62, 200, 124, 0.18);
+      border-radius: 9px;
+      font-size: 12.5px;
+      font-weight: 500;
+      font-family: var(--body);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all var(--t200);
+      white-space: nowrap;
+    }
+
+    .btn-nav:hover {
+      background: var(--g700);
+      transform: translateY(-1px);
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      height: 100svh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--ink);
+    }
+
+    /* Animated panel — right side only, uniform background elsewhere */
+    .hero-media {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 56%;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 22%);
+      mask-image: linear-gradient(to right, transparent 0%, #000 22%);
+    }
+
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.32;
+    }
+
+    /* Deep gradient overlay — feathers the panel into the page palette */
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(6,15,13,0.55) 0%, rgba(6,15,13,0.0) 35%, rgba(6,15,13,0.0) 60%, rgba(6,15,13,0.92) 100%),
+        linear-gradient(90deg, transparent 55%, rgba(6,15,13,0.6) 100%);
+    }
+
+    /* Neon arc — inspired by reference design */
+    .hero-arc {
+      position: absolute;
+      bottom: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140vw;
+      max-width: 1800px;
+      aspect-ratio: 2 / 1;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-arc-svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: left;
+      width: 100%;
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 96px 24px 0;
+    }
+
+    .hero-content > * { max-width: 600px; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(62, 200, 124, 0.07);
+      border: 1px solid rgba(62, 200, 124, 0.2);
+      border-radius: 100px;
+      padding: 6px 18px 6px 12px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--g300);
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 1s 0.1s var(--ease) forwards;
+    }
+
+    .badge-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--g400);
+      border-radius: 50%;
+      animation: blink 2.4s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+
+    /* Geist hero headline */
+    .hero-title {
+      font-family: var(--display);
+      font-size: clamp(48px, 6.8vw, 96px);
+      font-weight: 600;
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      color: var(--white);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 1s 0.3s var(--ease) forwards;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--g500) 0%, var(--g300) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-family: var(--body);
+      font-size: clamp(15px, 1.7vw, 18px);
+      font-weight: 300;
+      color: rgba(237, 232, 222, 0.55);
+      line-height: 1.8;
+      margin: 0 0 52px;
+      opacity: 0;
+      animation: fadeUp 1s 0.5s var(--ease) forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 14px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 1s 0.7s var(--ease) forwards;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 15px 30px;
+      background: var(--g700);
+      color: var(--white);
+      border: 1px solid rgba(62, 200, 124, 0.22);
+      border-radius: 11px;
+      font-size: 14.5px;
+      font-weight: 500;
+      font-family: var(--body);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.35s var(--ease);
+      letter-spacing: 0.01em;
+    }
+
+    .btn-primary:hover {
+      background: var(--g600);
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(13, 92, 70, 0.38), 0 0 0 1px rgba(62,200,124,0.2);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 15px 26px;
+      background: transparent;
+      color: rgba(237, 232, 222, 0.6);
+      border: 1px solid rgba(237, 232, 222, 0.11);
+      border-radius: 11px;
+      font-size: 14.5px;
+      font-weight: 400;
+      font-family: var(--body);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all var(--t200);
+    }
+
+    .btn-ghost:hover { color: var(--cream); border-color: rgba(237,232,222,0.22); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 38px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      opacity: 0;
+      animation: fadeUp 1s 1.2s var(--ease) forwards;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, var(--g500), transparent);
+      animation: scrollPulse 2.6s ease-in-out infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes scrollPulse {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      49%  { transform: scaleY(1); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── SHARED SECTION STYLES ─── */
+    section { padding: 120px 24px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--body);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--g400);
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--g500);
+      opacity: 0.5;
+    }
+
+    /* Display headline — uses Geist */
+    .heading-display {
+      font-family: var(--display);
+      font-size: clamp(34px, 4.6vw, 60px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .heading-display em {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--g300);
+    }
+
+    .lead {
+      font-family: var(--body);
+      font-size: 16px;
+      font-weight: 300;
+      color: rgba(237, 232, 222, 0.5);
+      line-height: 1.84;
+      max-width: 520px;
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      background: var(--g900);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-rings {
+      position: absolute;
+      right: -140px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    .about-rings circle { fill: none; stroke: rgba(62,200,124,0.05); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 96px;
+      align-items: center;
+      margin-top: 72px;
+    }
+
+    .manifesto-quote {
+      font-family: var(--body);
+      font-size: clamp(18px, 2vw, 23px);
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(237, 232, 222, 0.72);
+      line-height: 1.7;
+      padding-left: 22px;
+      border-left: 2px solid var(--g700);
+      margin-bottom: 32px;
+    }
+
+    .about-body {
+      font-size: 15.5px;
+      font-weight: 300;
+      color: rgba(237, 232, 222, 0.48);
+      line-height: 1.88;
+    }
+
+    /* Pine symbol — rotates slowly */
+    .pine-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .pine-glow {
+      position: absolute;
+      width: 460px;
+      height: 300px;
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(34,168,120,0.12), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .pine-svg {
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 0 24px rgba(62,200,124,0.15));
+      animation: slowSpin 50s linear infinite;
+    }
+
+    .pine-video {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 36px rgba(62,200,124,0.16));
+    }
+
+    @keyframes slowSpin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    /* Pillars */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 80px;
+    }
+
+    .pillar {
+      padding: 30px 26px;
+      background: rgba(13, 50, 40, 0.22);
+      border: 1px solid rgba(62, 200, 124, 0.08);
+      border-radius: 15px;
+      transition: background var(--t400), border-color var(--t400), transform var(--t400);
+      cursor: default;
+    }
+
+    .pillar:hover {
+      background: rgba(13, 50, 40, 0.42);
+      border-color: rgba(62, 200, 124, 0.16);
+      transform: translateY(-4px);
+    }
+
+    .pillar-eye {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--g400);
+      margin-bottom: 10px;
+    }
+
+    .pillar h3 {
+      font-family: var(--body);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .pillar p {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(237, 232, 222, 0.44);
+      line-height: 1.75;
+    }
+
+    /* ─── ECOSYSTEM ─── */
+    #ecosystem { background: var(--ink); }
+
+    .eco-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 52px;
+      gap: 40px;
+    }
+
+    .eco-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    /* 3D tilt card */
+    .company-card {
+      position: relative;
+      background: var(--g900);
+      border: 1px solid rgba(62, 200, 124, 0.07);
+      border-radius: 20px;
+      padding: 36px 30px 30px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transform-style: preserve-3d;
+      transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+      will-change: transform;
+    }
+
+    .company-card:hover {
+      border-color: rgba(62, 200, 124, 0.16);
+      box-shadow: 0 32px 64px rgba(6,15,13,0.6);
+    }
+
+    .card-shine {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(62,200,124,0.06), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.3s var(--ease);
+      pointer-events: none;
+      border-radius: inherit;
+    }
+
+    .company-card:hover .card-shine { opacity: 1; }
+
+    .card-bottom-line {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent 0%, var(--g700) 30%, var(--g400) 60%, transparent 100%);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.45s var(--ease);
+    }
+
+    .company-card:hover .card-bottom-line { transform: scaleX(1); }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      background: rgba(13, 92, 70, 0.22);
+      border: 1px solid rgba(62, 200, 124, 0.13);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      flex-shrink: 0;
+    }
+
+    .card-logo {
+      height: 34px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: left center;
+      margin-bottom: 24px;
+      flex-shrink: 0;
+      opacity: 0.96;
+    }
+
+    .card-sector {
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--g400);
+      margin-bottom: 7px;
+    }
+
+    .card-name {
+      font-family: var(--body);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--white);
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+
+    .card-desc {
+      font-size: 13.5px;
+      font-weight: 300;
+      color: rgba(237, 232, 222, 0.45);
+      line-height: 1.75;
+      flex: 1;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--g400);
+      text-decoration: none;
+      margin-top: 22px;
+      transition: gap var(--t200), color var(--t200);
+    }
+
+    .card-link:hover { gap: 10px; color: var(--g300); }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--g900); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 60px;
+    }
+
+    /* Form */
+    .form { display: flex; flex-direction: column; gap: 13px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+
+    .field { display: flex; flex-direction: column; gap: 6px; }
+
+    .field label {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(237, 232, 222, 0.38);
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      background: rgba(13, 50, 40, 0.25);
+      border: 1px solid rgba(62, 200, 124, 0.1);
+      border-radius: 10px;
+      padding: 13px 14px;
+      font-size: 13.5px;
+      font-weight: 400;
+      color: var(--cream);
+      font-family: var(--body);
+      outline: none;
+      transition: border-color var(--t200), background var(--t200);
+      -webkit-appearance: none;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder { color: rgba(237,232,222,0.22); }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--g600);
+      background: rgba(13, 50, 40, 0.4);
+    }
+
+    .field select option { background: var(--g800); }
+    .field textarea { resize: vertical; min-height: 105px; }
+
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--g700);
+      color: var(--cream);
+      border: 1px solid rgba(62,200,124,0.18);
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: var(--body);
+      cursor: pointer;
+      transition: all var(--t200);
+      margin-top: 4px;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-submit:hover {
+      background: var(--g600);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(13, 92, 70, 0.28);
+    }
+
+    .btn-submit:disabled { opacity: 0.7; cursor: default; transform: none; }
+
+    /* Contact aside */
+    .contact-aside { display: flex; flex-direction: column; gap: 32px; }
+
+    .aside-intro {
+      font-size: 15.5px;
+      font-weight: 300;
+      color: rgba(237,232,222,0.48);
+      line-height: 1.84;
+    }
+
+    .contact-row { display: flex; flex-direction: column; gap: 5px; }
+
+    .contact-key {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--g400);
+    }
+
+    .contact-val {
+      font-size: 16.5px;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+
+    .btn-schedule {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 13px 22px;
+      background: rgba(13, 92, 70, 0.2);
+      border: 1px solid rgba(62, 200, 124, 0.18);
+      border-radius: 10px;
+      color: var(--g300);
+      font-size: 13.5px;
+      font-weight: 500;
+      font-family: var(--body);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all var(--t200);
+    }
+
+    .btn-schedule:hover {
+      background: rgba(13, 92, 70, 0.35);
+      transform: translateY(-2px);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(62, 200, 124, 0.06);
+      padding: 60px 24px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 56px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(62, 200, 124, 0.06);
+      margin-bottom: 28px;
+    }
+
+    .footer-tagline {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(237,232,222,0.32);
+      line-height: 1.75;
+      margin-top: 16px;
+      max-width: 260px;
+    }
+
+    .footer-col-title {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(237,232,222,0.34);
+      margin-bottom: 15px;
+    }
+
+    .footer-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .footer-list a {
+      font-size: 13.5px;
+      font-weight: 300;
+      color: rgba(237,232,222,0.34);
+      text-decoration: none;
+      transition: color var(--t200);
+    }
+
+    .footer-list a:hover { color: rgba(237,232,222,0.7); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-bottom p {
+      font-size: 12px;
+      color: rgba(237,232,222,0.25);
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+    }
+
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.1s; }
+    .d2 { transition-delay: 0.2s; }
+    .d3 { transition-delay: 0.3s; }
+    .d4 { transition-delay: 0.4s; }
+
+    /* Clip reveal for headings */
+    .clip-reveal {
+      overflow: hidden;
+    }
+
+    .clip-reveal-inner {
+      display: block;
+      transform: translateY(110%);
+      transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .clip-reveal.in .clip-reveal-inner { transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .hero-content { text-align: center; }
+      .hero-content > * { max-width: 600px; margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-media {
+        width: 100%;
+        -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 35%);
+        mask-image: linear-gradient(180deg, transparent 0%, #000 35%);
+      }
+      .hero-video { opacity: 0.28; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .pine-visual { display: none; }
+      .pillars { grid-template-columns: 1fr 1fr; }
+      .eco-cards { grid-template-columns: 1fr 1fr; }
+      .eco-header { flex-direction: column; gap: 16px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+    }
+
+    @media (max-width: 768px) {
+      #nav { top: 10px; width: calc(100% - 20px); padding: 10px 14px; }
+      .nav-links { display: none; }
+      section { padding: 80px 18px; }
+      .hero-title { font-size: clamp(44px, 12vw, 72px); line-height: 0.98; }
+      .hero-sub { font-size: 15px; }
+      .hero-actions { flex-direction: column; width: 100%; }
+      .hero-actions a { width: 100%; justify-content: center; }
+      .about-grid { margin-top: 48px; }
+      .pillars { grid-template-columns: 1fr; gap: 14px; margin-top: 48px; }
+      .eco-cards { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .heading-display { font-size: clamp(32px, 8vw, 52px); }
+    }
+
+    @media (max-width: 420px) {
+      .hero-title { font-size: 40px; }
+      .hero-badge { font-size: 10px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav id="nav" role="navigation" aria-label="Navegação principal">
+  <a href="#hero" class="nav-logo" aria-label="Oren — início">
+    <!-- Accurate Oren pine symbol: ~14 leaves in ~270° arc, opening right -->
+    <svg width="30" height="30" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="ng" x1="15" y1="55" x2="50" y2="5" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#0D5C46"/>
+          <stop offset="40%"  stop-color="#22A878"/>
+          <stop offset="80%"  stop-color="#4ECF82"/>
+          <stop offset="100%" stop-color="#72E46A"/>
+        </linearGradient>
+      </defs>
+      <!-- Leaves positioned to match actual logo: gap at ~1-3 o'clock -->
+      <!-- Bottom (6 o'clock) → largest, darkest → rotate clockwise to 4 o'clock -->
+      <g transform="translate(30,30)">
+        <ellipse rx="3.8" ry="9.5" fill="url(#ng)" transform="rotate(185) translate(0,-19)"/>
+        <ellipse rx="3.6" ry="9"   fill="url(#ng)" transform="rotate(210) translate(0,-18.5)"/>
+        <ellipse rx="3.4" ry="8.5" fill="url(#ng)" transform="rotate(235) translate(0,-18)"/>
+        <ellipse rx="3.2" ry="8"   fill="url(#ng)" transform="rotate(255) translate(0,-17.5)"/>
+        <ellipse rx="3.0" ry="7.5" fill="url(#ng)" transform="rotate(275) translate(0,-17)"/>
+        <ellipse rx="2.8" ry="7"   fill="url(#ng)" transform="rotate(295) translate(0,-16.5)"/>
+        <ellipse rx="2.6" ry="6.5" fill="url(#ng)" transform="rotate(315) translate(0,-16)"/>
+        <ellipse rx="2.4" ry="6"   fill="url(#ng)" transform="rotate(330) translate(0,-15.5)"/>
+        <ellipse rx="2.2" ry="5.5" fill="url(#ng)" transform="rotate(345) translate(0,-15)"/>
+        <ellipse rx="2.0" ry="5.0" fill="url(#ng)" transform="rotate(0)   translate(0,-14.5)"/>
+        <ellipse rx="1.9" ry="4.6" fill="url(#ng)" transform="rotate(12)  translate(0,-14)"/>
+        <ellipse rx="1.8" ry="4.2" fill="url(#ng)" transform="rotate(130) translate(0,-18.5)"/>
+        <ellipse rx="2.0" ry="5"   fill="url(#ng)" transform="rotate(148) translate(0,-18.8)"/>
+        <ellipse rx="2.2" ry="5.6" fill="url(#ng)" transform="rotate(165) translate(0,-19)"/>
+      </g>
+    </svg>
+    <span class="nav-logo-text">Oren</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#about"><span class="pt">Sobre</span><span class="en">About</span></a></li>
+    <li><a href="#ecosystem"><span class="pt">Ecossistema</span><span class="en">Ecosystem</span></a></li>
+    <li><a href="#contact"><span class="pt">Contato</span><span class="en">Contact</span></a></li>
+  </ul>
+
+  <div class="nav-right">
+    <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+      <button class="lang-btn active" onclick="setLang('pt')" aria-pressed="true">PT</button>
+      <button class="lang-btn" onclick="setLang('en')" aria-pressed="false">EN</button>
+    </div>
+    <a href="#contact" class="btn-nav">
+      <span class="pt">Falar com a Equipe</span>
+      <span class="en">Talk to Our Team</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-media" aria-hidden="true">
+    <video class="hero-video" autoplay muted playsinline preload="metadata" oncanplay="this.playbackRate=0.5">
+      <source src="video2-final.mp4" type="video/mp4">
+    </video>
+    <div class="hero-gradient"></div>
+  </div>
+
+  <!-- Neon arc -->
+  <div class="hero-arc" aria-hidden="true">
+    <svg class="hero-arc-svg" viewBox="0 0 1400 700" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#0D5C46" stop-opacity="0"/>
+          <stop offset="25%"  stop-color="#22A878" stop-opacity="0.6"/>
+          <stop offset="50%"  stop-color="#6EDE6E" stop-opacity="0.9"/>
+          <stop offset="75%"  stop-color="#22A878" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#0D5C46" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="arcBlur">
+          <feGaussianBlur stdDeviation="8" result="blur"/>
+          <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+        <filter id="arcGlow">
+          <feGaussianBlur stdDeviation="20" result="glow"/>
+          <feComposite in="SourceGraphic" in2="glow" operator="over"/>
+        </filter>
+      </defs>
+      <!-- Outer glow arc -->
+      <path d="M 50 680 Q 700 -80 1350 680" fill="none" stroke="url(#arcGrad)" stroke-width="3" filter="url(#arcGlow)" opacity="0.4"/>
+      <!-- Main arc -->
+      <path d="M 100 680 Q 700 -40 1300 680" fill="none" stroke="url(#arcGrad)" stroke-width="1.5" opacity="0.85"/>
+      <!-- Inner subtle arc -->
+      <path d="M 200 680 Q 700 60 1200 680" fill="none" stroke="url(#arcGrad)" stroke-width="0.7" opacity="0.3"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge" role="text">
+      <span class="badge-dot" aria-hidden="true"></span>
+      Global Financial Solutions
+    </div>
+
+    <h1 class="hero-title">
+      <span class="pt">Onde Capital<br><em>Encontra</em> Legado</span>
+      <span class="en">Where Capital<br><em>Meets</em> Legacy</span>
+    </h1>
+
+    <p class="hero-sub">
+      <span class="pt">Uma holding que conecta pagamentos, capital e expansão global, com raízes no Brasil e crescimento sem fronteiras.</span>
+      <span class="en">A holding company connecting payments, capital, and global expansion, rooted in Brazil, growing across borders.</span>
+    </p>
+
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        <span class="pt">Falar com Nossa Equipe</span>
+        <span class="en">Talk to Our Team</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#ecosystem" class="btn-ghost">
+        <span class="pt">Conhecer o Ecossistema</span>
+        <span class="en">Explore the Ecosystem</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+
+<!-- ═══ ABOUT / MANIFESTO ═══ -->
+<section id="about">
+  <svg class="about-rings" width="640" height="640" viewBox="0 0 640 640" aria-hidden="true">
+    <circle cx="320" cy="320" r="110" stroke-width="1"/>
+    <circle cx="320" cy="320" r="185" stroke-width="0.8"/>
+    <circle cx="320" cy="320" r="265" stroke-width="0.5"/>
+    <circle cx="320" cy="320" r="315" stroke-width="0.3"/>
+  </svg>
+
+  <div class="container">
+    <div class="eyebrow reveal">
+      <span class="pt">Manifesto</span><span class="en">Manifesto</span>
+    </div>
+
+    <div class="about-grid">
+      <div>
+        <div class="clip-reveal reveal">
+          <h2 class="heading-display">
+            <span class="pt">Raízes profundas,<br>crescimento <em>sem limites</em></span>
+            <span class="en">Deep roots,<br>growth <em>without limits</em></span>
+          </h2>
+        </div>
+
+        <p class="manifesto-quote reveal d1">
+          <span class="pt">"Oren é o pinheiro em hebraico, uma árvore que cresce em terrenos áridos, resiste ao inverno e prospera onde outras espécies não conseguem."</span>
+          <span class="en">"Oren is the pine in Hebrew, a tree that grows in arid ground, withstands winter, and thrives where other species cannot."</span>
+        </p>
+
+        <p class="about-body reveal d2">
+          <span class="pt">Somos mais do que uma holding. Somos a base que dá coesão, credibilidade e visão de longo prazo a cada empresa do grupo. Conectamos capital, tecnologia e presença global para construir um legado. Em cada operação, em cada mercado, em cada decisão, Oren é o caminho.</span>
+          <span class="en">We are more than a holding company. We are the foundation that gives cohesion, credibility, and long-term vision to each company in the group. We connect capital, technology, and global presence to build a legacy. In every operation, every market, every decision, Oren is the way.</span>
+        </p>
+      </div>
+
+      <!-- Pine visual with glow -->
+      <div class="pine-visual reveal d2" aria-hidden="true">
+        <div class="pine-glow"></div>
+        <video class="pine-video" muted playsinline preload="auto" poster="assets/oren-full-poster.png">
+          <source src="assets/oren-full.webm" type="video/webm">
+        </video>
+      </div>
+    </div>
+
+    <!-- Pillars -->
+    <div class="pillars">
+      <div class="pillar reveal d1">
+        <p class="pillar-eye"><span class="pt">O Que Fazemos</span><span class="en">What We Do</span></p>
+        <h3><span class="pt">Negócios que conectam mundos</span><span class="en">Businesses that connect worlds</span></h3>
+        <p><span class="pt">Uma holding que, através de suas empresas, apresenta soluções inteligentes para gestão de recursos, transferências e a construção de um legado global.</span><span class="en">A holding that, through its companies, delivers intelligent solutions for resource management, transfers, and the construction of a global legacy.</span></p>
+      </div>
+      <div class="pillar reveal d2">
+        <p class="pillar-eye"><span class="pt">Como Operamos</span><span class="en">How We Operate</span></p>
+        <h3><span class="pt">Autonomia com visão unificada</span><span class="en">Autonomy with unified vision</span></h3>
+        <p><span class="pt">Cada empresa opera de forma independente, líder em sua vertical, governada com disciplina de capital e inteligência estratégica.</span><span class="en">Each company operates independently, leading in its vertical, governed with capital discipline and strategic intelligence.</span></p>
+      </div>
+      <div class="pillar reveal d3">
+        <p class="pillar-eye"><span class="pt">Por Que Existimos</span><span class="en">Why We Exist</span></p>
+        <h3><span class="pt">Valor real de longo prazo</span><span class="en">Real long-term value</span></h3>
+        <p><span class="pt">Valor real só é criado quando capital, tecnologia e presença global estão unidos por uma visão ampla e futurista.</span><span class="en">Real value is only created when capital, technology, and global presence are united by a broad, forward-looking vision.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ ECOSYSTEM ═══ -->
+<section id="ecosystem">
+  <div class="container">
+    <div class="eco-header">
+      <div>
+        <div class="eyebrow reveal"><span class="pt">Ecossistema</span><span class="en">Ecosystem</span></div>
+        <h2 class="heading-display reveal">
+          <span class="pt">Três empresas.<br>Um ecossistema.</span>
+          <span class="en">Three companies.<br>One ecosystem.</span>
+        </h2>
+      </div>
+      <p class="lead reveal d1" style="max-width:340px; align-self:flex-end; padding-bottom:8px">
+        <span class="pt">Cada marca opera com autonomia e propósito próprio, conectada pela visão e estrutura da Oren.</span>
+        <span class="en">Each brand operates with its own autonomy and purpose, connected by Oren's vision and structure.</span>
+      </p>
+    </div>
+
+    <div class="eco-cards">
+      <!-- UaiPay -->
+      <article class="company-card reveal d1">
+        <div class="card-shine"></div>
+        <div class="card-bottom-line"></div>
+        <img src="assets/uaipay-logo.png" alt="UaiPay" class="card-logo">
+        <p class="card-sector"><span class="pt">Infraestrutura Financeira</span><span class="en">Financial Infrastructure</span></p>
+        <h3 class="card-name">UaiPay</h3>
+        <p class="card-desc">
+          <span class="pt">Soluções de transferências e infraestrutura financeira que conectam o Brasil ao mundo com velocidade, segurança e eficiência operacional.</span>
+          <span class="en">Transfer solutions and financial infrastructure connecting Brazil to the world with speed, security, and operational efficiency.</span>
+        </p>
+        <a href="https://uaipay.app" target="_blank" rel="noopener" class="card-link">
+          <span class="pt">Saiba mais</span><span class="en">Learn more</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <!-- Bateia Capital -->
+      <article class="company-card reveal d2">
+        <div class="card-shine"></div>
+        <div class="card-bottom-line"></div>
+        <img src="assets/bateia-logo.png" alt="Bateia Capital" class="card-logo">
+        <p class="card-sector"><span class="pt">Investimentos & Capital</span><span class="en">Investments & Capital</span></p>
+        <h3 class="card-name">Bateia Capital</h3>
+        <p class="card-desc">
+          <span class="pt">Investimentos, gestão de capital e crédito lastreado em ativos imobiliários, transformando imóveis no Brasil em crédito nos Estados Unidos.</span>
+          <span class="en">Investments, capital management, and real estate-backed credit, turning Brazilian real estate into US credit.</span>
+        </p>
+        <a href="https://bateiacapital.us" target="_blank" rel="noopener" class="card-link">
+          <span class="pt">Saiba mais</span><span class="en">Learn more</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <!-- BTS Global Corp -->
+      <article class="company-card reveal d3">
+        <div class="card-shine"></div>
+        <div class="card-bottom-line"></div>
+        <img src="assets/bts-logo-new.png" alt="BTS Global" class="card-logo">
+        <p class="card-sector"><span class="pt">Infraestrutura Operacional</span><span class="en">Operational Infrastructure</span></p>
+        <h3 class="card-name">BTS Global Corp</h3>
+        <p class="card-desc">
+          <span class="pt">Uma camada única que substitui múltiplos fornecedores: orquestração de entidades, documentação em blockchain e inteligência regulatória global.</span>
+          <span class="en">A single layer replacing multiple suppliers: entity orchestration, blockchain-verified documentation, and global regulatory intelligence.</span>
+        </p>
+        <a href="https://btsglobalcorp.com" target="_blank" rel="noopener" class="card-link">
+          <span class="pt">Saiba mais</span><span class="en">Learn more</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="container">
+    <div class="eyebrow reveal"><span class="pt">Contato</span><span class="en">Contact</span></div>
+    <h2 class="heading-display reveal">
+      <span class="pt">Vamos construir<br>juntos?</span>
+      <span class="en">Ready to build<br>together?</span>
+    </h2>
+
+    <div class="contact-grid">
+      <form class="form reveal d1" id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="fname"><span class="pt">Nome</span><span class="en">Name</span></label>
+            <input type="text" id="fname" name="name" placeholder="João Silva" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="femail">E-mail</label>
+            <input type="email" id="femail" name="email" placeholder="joao@empresa.com" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fcompany"><span class="pt">Empresa</span><span class="en">Company</span></label>
+          <input type="text" id="fcompany" name="company" placeholder="Sua Empresa S.A." autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="finterest"><span class="pt">Área de Interesse</span><span class="en">Area of Interest</span></label>
+          <select id="finterest" name="interest">
+            <option value="" disabled selected data-pt="— Selecione —" data-en="— Select one —">— Selecione —</option>
+            <option value="uaipay"  data-pt="UaiPay — Transferências e Pagamentos" data-en="UaiPay — Transfers & Payments">UaiPay — Transferências e Pagamentos</option>
+            <option value="bateia" data-pt="Bateia Capital — Investimentos & Crédito" data-en="Bateia Capital — Investments & Credit">Bateia Capital — Investimentos & Crédito</option>
+            <option value="bts"    data-pt="BTS Global Corp — Infraestrutura Global" data-en="BTS Global Corp — Global Infrastructure">BTS Global Corp — Infraestrutura Global</option>
+            <option value="oren"   data-pt="Oren Holding — Parceria Estratégica" data-en="Oren Holding — Strategic Partnership">Oren Holding — Parceria Estratégica</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fmsg"><span class="pt">Mensagem</span><span class="en">Message</span></label>
+          <textarea id="fmsg" name="message" placeholder="Como podemos ajudar?"></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <span class="pt">Enviar Mensagem</span>
+          <span class="en">Send Message</span>
+        </button>
+      </form>
+
+      <div class="contact-aside reveal d2">
+        <p class="aside-intro">
+          <span class="pt">Seja para investir, fazer parceria ou conhecer o ecossistema Oren, nossa equipe está pronta para uma conversa direta e sem burocracia.</span>
+          <span class="en">Whether to invest, partner, or explore the Oren ecosystem, our team is ready for a direct, no-bureaucracy conversation.</span>
+        </p>
+
+        <div class="contact-row">
+          <span class="contact-key"><span class="pt">Localização</span><span class="en">Location</span></span>
+          <span class="contact-val">Brasil · Estados Unidos</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-key">E-mail</span>
+          <span class="contact-val">contato@oren.group</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-key"><span class="pt">Mercados</span><span class="en">Markets</span></span>
+          <span class="contact-val">Brasil · EUA · Internacional</span>
+        </div>
+
+        <a href="mailto:contato@oren.group?subject=Agendar%20uma%20reuni%C3%A3o%20%7C%20Schedule%20a%20meeting" class="btn-schedule">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span class="pt">Agendar uma Reunião</span>
+          <span class="en">Schedule a Meeting</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="#hero" class="nav-logo" style="text-decoration:none" aria-label="Voltar ao topo">
+          <svg width="32" height="32" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="fg" x1="15" y1="55" x2="50" y2="5" gradientUnits="userSpaceOnUse">
+                <stop offset="0%"   stop-color="#0D5C46"/>
+                <stop offset="40%"  stop-color="#22A878"/>
+                <stop offset="80%"  stop-color="#4ECF82"/>
+                <stop offset="100%" stop-color="#72E46A"/>
+              </linearGradient>
+            </defs>
+            <g transform="translate(30,30)">
+              <ellipse rx="3.8" ry="9.5" fill="url(#fg)" transform="rotate(185) translate(0,-19)"/>
+              <ellipse rx="3.6" ry="9"   fill="url(#fg)" transform="rotate(210) translate(0,-18.5)"/>
+              <ellipse rx="3.4" ry="8.5" fill="url(#fg)" transform="rotate(235) translate(0,-18)"/>
+              <ellipse rx="3.2" ry="8"   fill="url(#fg)" transform="rotate(255) translate(0,-17.5)"/>
+              <ellipse rx="3.0" ry="7.5" fill="url(#fg)" transform="rotate(275) translate(0,-17)"/>
+              <ellipse rx="2.8" ry="7"   fill="url(#fg)" transform="rotate(295) translate(0,-16.5)"/>
+              <ellipse rx="2.6" ry="6.5" fill="url(#fg)" transform="rotate(315) translate(0,-16)"/>
+              <ellipse rx="2.4" ry="6"   fill="url(#fg)" transform="rotate(330) translate(0,-15.5)"/>
+              <ellipse rx="2.2" ry="5.5" fill="url(#fg)" transform="rotate(345) translate(0,-15)"/>
+              <ellipse rx="2.0" ry="5.0" fill="url(#fg)" transform="rotate(0)   translate(0,-14.5)"/>
+              <ellipse rx="1.9" ry="4.6" fill="url(#fg)" transform="rotate(12)  translate(0,-14)"/>
+              <ellipse rx="1.8" ry="4.2" fill="url(#fg)" transform="rotate(130) translate(0,-18.5)"/>
+              <ellipse rx="2.0" ry="5"   fill="url(#fg)" transform="rotate(148) translate(0,-18.8)"/>
+              <ellipse rx="2.2" ry="5.6" fill="url(#fg)" transform="rotate(165) translate(0,-19)"/>
+            </g>
+          </svg>
+          <span style="font-size:20px;font-weight:600;letter-spacing:-0.02em;font-family:var(--body)">Oren</span>
+        </a>
+        <p class="footer-tagline">
+          <span class="pt">Uma holding que transforma capital e patrimônio em crescimento sólido, conectando o Brasil e os Estados Unidos.</span>
+          <span class="en">A holding company transforming capital and assets into solid growth, connecting Brazil and the United States.</span>
+        </p>
+      </div>
+
+      <div>
+        <p class="footer-col-title"><span class="pt">Grupo</span><span class="en">Group</span></p>
+        <ul class="footer-list">
+          <li><a href="#ecosystem">UaiPay</a></li>
+          <li><a href="#ecosystem">Bateia Capital</a></li>
+          <li><a href="#ecosystem">BTS Global Corp</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title"><span class="pt">Empresa</span><span class="en">Company</span></p>
+        <ul class="footer-list">
+          <li><a href="#about"><span class="pt">Sobre a Oren</span><span class="en">About Oren</span></a></li>
+          <li><a href="#ecosystem"><span class="pt">Ecossistema</span><span class="en">Ecosystem</span></a></li>
+          <li><a href="#contact"><span class="pt">Contato</span><span class="en">Contact</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Legal</p>
+        <ul class="footer-list">
+          <li><a href="#"><span class="pt">Privacidade</span><span class="en">Privacy</span></a></li>
+          <li><a href="#"><span class="pt">Termos de Uso</span><span class="en">Terms of Use</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Oren. <span class="pt">Todos os direitos reservados.</span><span class="en">All rights reserved.</span></p>
+      <p>Brasil · EUA · Global Financial Solutions</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+/* ── LANGUAGE ── */
+function setLang(lang) {
+  document.body.classList.toggle('lang-en', lang === 'en');
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const active = btn.textContent.trim() === lang.toUpperCase();
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-pressed', active);
+  });
+  document.querySelectorAll('select option[data-pt]').forEach(opt => {
+    opt.textContent = lang === 'en' ? opt.dataset.en : opt.dataset.pt;
+  });
+}
+
+/* ── NAVBAR SCROLL ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+/* ── SCROLL REVEAL ── */
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* ── PINE LOGO: play the assembly animation when it scrolls into view ── */
+const pineVideo = document.querySelector('.pine-video');
+if (pineVideo) {
+  const pineObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        pineVideo.currentTime = 0;
+        const p = pineVideo.play();
+        if (p) p.catch(() => {});
+        pineObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  pineObs.observe(pineVideo);
+}
+
+/* ── 3D CARD TILT ── */
+document.querySelectorAll('.company-card').forEach(card => {
+  const shine = card.querySelector('.card-shine');
+
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = rect.width / 2;
+    const cy = rect.height / 2;
+    const rotX = ((y - cy) / cy) * -6;
+    const rotY = ((x - cx) / cx) * 8;
+
+    card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(4px)`;
+
+    const px = (x / rect.width) * 100;
+    const py = (y / rect.height) * 100;
+    shine.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(62,200,124,0.07), transparent 55%)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    shine.style.background = '';
+  });
+});
+
+/* ── FORM ── */
+/* Destination address for contact + scheduling. Swap for a Formspree
+   endpoint or Calendly URL when available. */
+const OREN_EMAIL = 'contato@oren.group';
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const isEn = document.body.classList.contains('lang-en');
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  const data = new FormData(form);
+  const name = (data.get('name') || '').trim();
+  const email = (data.get('email') || '').trim();
+  const company = (data.get('company') || '').trim();
+  const interest = form.querySelector('#finterest');
+  const interestText = interest && interest.selectedIndex > 0
+    ? interest.options[interest.selectedIndex].textContent.trim() : '';
+  const message = (data.get('message') || '').trim();
+
+  const subject = isEn
+    ? `Contact from ${name || 'website'}`
+    : `Contato de ${name || 'site'}`;
+  const bodyLines = isEn
+    ? [`Name: ${name}`, `Email: ${email}`, `Company: ${company}`,
+       `Area of interest: ${interestText}`, '', message]
+    : [`Nome: ${name}`, `E-mail: ${email}`, `Empresa: ${company}`,
+       `Área de interesse: ${interestText}`, '', message];
+  const mailto = `mailto:${OREN_EMAIL}`
+    + `?subject=${encodeURIComponent(subject)}`
+    + `&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+  window.location.href = mailto;
+
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = isEn ? '✓ Opening your email…' : '✓ Abrindo seu e-mail…';
+  btn.disabled = true;
+  btn.style.background = 'var(--g600)';
+  setTimeout(() => {
+    btn.innerHTML = isEn
+      ? '<span class="en">Send Message</span>'
+      : '<span class="pt">Enviar Mensagem</span>';
+    btn.disabled = false;
+    btn.style.background = '';
+    form.reset();
+  }, 3500);
+}
+</script>
+</body>
+</html>

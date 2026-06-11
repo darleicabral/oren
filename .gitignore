@@ -1,0 +1,16 @@
+# Unrelated documents / source materials (not part of the website)
+*.pdf
+*.zip
+*.gif
+APRESENTAÇÕES/
+DOCUMENTOS/
+imagens pdsf/
+logos extraidos/
+.claude/
+
+# Extra/unused video files (only video2-final.mp4 is used by the site)
+video.mp4
+video2.mp4
+GIF OREN.mp4
+logo animada.mp4
+video gif logo.mp4
