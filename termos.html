@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oren — Global Financial Solutions</title>
-  <meta name="description" content="Uma holding que conecta pagamentos, capital e expansão global entre Brasil e Estados Unidos. Raízes profundas, crescimento sem limites.">
-  <meta property="og:title" content="Oren — Global Financial Solutions">
-  <meta property="og:description" content="Transformamos capital e patrimônio em crescimento sólido, conectando o Brasil e os Estados Unidos.">
+  <title>Termos de Uso & Privacidade — Oren</title>
+  <meta name="description" content="Termos de Uso e Política de Privacidade da Oren, em conformidade com a LGPD (Lei Geral de Proteção de Dados).">
+  <meta property="og:title" content="Termos de Uso & Privacidade — Oren">
+  <meta property="og:description" content="Termos de Uso e Política de Privacidade da Oren, em conformidade com a LGPD.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#060F0D">
 
@@ -1057,22 +1057,145 @@
         transition-duration: 0.01ms !important;
       }
     }
+
+    /* ─── LEGAL PAGE ─── */
+    .legal-hero {
+      padding: 180px 24px 60px;
+    }
+
+    .legal-updated {
+      font-family: var(--body);
+      font-size: 13px;
+      color: rgba(237, 232, 222, 0.45);
+      margin-top: 8px;
+    }
+
+    .legal-content {
+      padding: 0 24px 120px;
+    }
+
+    .legal-content .container {
+      max-width: 820px;
+    }
+
+    .legal-block {
+      padding-top: 48px;
+      border-top: 1px solid rgba(237, 232, 222, 0.08);
+      margin-top: 48px;
+    }
+
+    .legal-block:first-child {
+      padding-top: 0;
+      border-top: none;
+      margin-top: 0;
+    }
+
+    .legal-block h2 {
+      font-family: var(--display);
+      font-size: clamp(20px, 2.4vw, 26px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .legal-block h3 {
+      font-family: var(--display);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--g200);
+      margin: 24px 0 10px;
+    }
+
+    .legal-block p {
+      font-family: var(--body);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.84;
+      color: rgba(237, 232, 222, 0.65);
+      margin-bottom: 14px;
+    }
+
+    .legal-block ul {
+      list-style: none;
+      margin: 0 0 14px;
+      padding: 0;
+    }
+
+    .legal-block li {
+      font-family: var(--body);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.84;
+      color: rgba(237, 232, 222, 0.65);
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    .legal-block li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--g500);
+    }
+
+    .legal-block a {
+      color: var(--g300);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(110, 222, 110, 0.3);
+      transition: border-color var(--t200);
+    }
+
+    .legal-block a:hover {
+      border-color: var(--g300);
+    }
+
+    .legal-toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .legal-toc a {
+      font-family: var(--body);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--cream);
+      background: rgba(237, 232, 222, 0.05);
+      border: 1px solid rgba(237, 232, 222, 0.1);
+      border-radius: 999px;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(237, 232, 222, 0.1);
+      transition: background var(--t200), border-color var(--t200);
+    }
+
+    .legal-toc a:hover {
+      background: rgba(110, 222, 110, 0.08);
+      border-color: var(--g500);
+    }
   </style>
 </head>
 <body>
 
 <!-- ═══ NAVBAR ═══ -->
 <nav id="nav" role="navigation" aria-label="Navegação principal">
-  <a href="#hero" class="nav-logo" aria-label="Oren — início">
+  <a href="index.html#hero" class="nav-logo" aria-label="Oren — início">
     <img src="assets/oren-icon.png" alt="" class="nav-logo-icon" aria-hidden="true">
     <span class="nav-logo-text">Oren</span>
   </a>
 
   <ul class="nav-links">
-    <li><a href="#hero"><span class="pt">Home</span><span class="en">Home</span></a></li>
-    <li><a href="#about"><span class="pt">Sobre</span><span class="en">About</span></a></li>
-    <li><a href="#ecosystem"><span class="pt">Ecossistema</span><span class="en">Ecosystem</span></a></li>
-    <li><a href="#contact"><span class="pt">Contato</span><span class="en">Contact</span></a></li>
+    <li><a href="index.html#hero"><span class="pt">Home</span><span class="en">Home</span></a></li>
+    <li><a href="index.html#about"><span class="pt">Sobre</span><span class="en">About</span></a></li>
+    <li><a href="index.html#ecosystem"><span class="pt">Ecossistema</span><span class="en">Ecosystem</span></a></li>
+    <li><a href="index.html#contact"><span class="pt">Contato</span><span class="en">Contact</span></a></li>
   </ul>
 
   <div class="nav-right">
@@ -1080,7 +1203,7 @@
       <button class="lang-btn active" onclick="setLang('pt')" aria-pressed="true">PT</button>
       <button class="lang-btn" onclick="setLang('en')" aria-pressed="false">EN</button>
     </div>
-    <a href="#contact" class="btn-nav">
+    <a href="index.html#contact" class="btn-nav">
       <span class="pt">Falar com a Equipe</span>
       <span class="en">Talk to Our Team</span>
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1088,298 +1211,133 @@
   </div>
 </nav>
 
-
-<!-- ═══ HERO ═══ -->
-<section id="hero">
-  <div class="hero-media" aria-hidden="true">
-    <video class="hero-video" autoplay muted playsinline preload="metadata" oncanplay="this.playbackRate=0.5">
-      <source src="video2-final.mp4" type="video/mp4">
-    </video>
-    <div class="hero-gradient"></div>
-  </div>
-
-  <!-- Neon arc -->
-  <div class="hero-arc" aria-hidden="true">
-    <svg class="hero-arc-svg" viewBox="0 0 1400 700" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%"   stop-color="#0D5C46" stop-opacity="0"/>
-          <stop offset="25%"  stop-color="#22A878" stop-opacity="0.6"/>
-          <stop offset="50%"  stop-color="#6EDE6E" stop-opacity="0.9"/>
-          <stop offset="75%"  stop-color="#22A878" stop-opacity="0.6"/>
-          <stop offset="100%" stop-color="#0D5C46" stop-opacity="0"/>
-        </linearGradient>
-        <filter id="arcBlur">
-          <feGaussianBlur stdDeviation="8" result="blur"/>
-          <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-        </filter>
-        <filter id="arcGlow">
-          <feGaussianBlur stdDeviation="20" result="glow"/>
-          <feComposite in="SourceGraphic" in2="glow" operator="over"/>
-        </filter>
-      </defs>
-      <!-- Outer glow arc -->
-      <path d="M 50 680 Q 700 -80 1350 680" fill="none" stroke="url(#arcGrad)" stroke-width="3" filter="url(#arcGlow)" opacity="0.4"/>
-      <!-- Main arc -->
-      <path d="M 100 680 Q 700 -40 1300 680" fill="none" stroke="url(#arcGrad)" stroke-width="1.5" opacity="0.85"/>
-      <!-- Inner subtle arc -->
-      <path d="M 200 680 Q 700 60 1200 680" fill="none" stroke="url(#arcGrad)" stroke-width="0.7" opacity="0.3"/>
-    </svg>
-  </div>
-
-  <div class="hero-content">
-    <div class="hero-badge" role="text">
-      <span class="badge-dot" aria-hidden="true"></span>
-      Global Financial Solutions
-    </div>
-
-    <h1 class="hero-title">
-      <span class="pt">
-        <span class="title-line"><span class="title-line-inner">Onde Capital</span></span>
-        <span class="title-line"><span class="title-line-inner"><em>Encontra</em> Legado</span></span>
-      </span>
-      <span class="en">
-        <span class="title-line"><span class="title-line-inner">Where Capital</span></span>
-        <span class="title-line"><span class="title-line-inner"><em>Meets</em> Legacy</span></span>
-      </span>
+<!-- ═══ LEGAL ═══ -->
+<section class="legal-hero">
+  <div class="container">
+    <div class="eyebrow reveal"><span class="pt">Legal</span><span class="en">Legal</span></div>
+    <h1 class="heading-display reveal">
+      <span class="pt">Termos de Uso & Política de Privacidade</span>
+      <span class="en">Terms of Use & Privacy Policy</span>
     </h1>
-
-    <p class="hero-sub">
-      <span class="pt">Uma holding que conecta pagamentos, capital e expansão global, com raízes no Brasil e crescimento sem fronteiras.</span>
-      <span class="en">A holding company connecting payments, capital, and global expansion, rooted in Brazil, growing across borders.</span>
+    <p class="lead reveal d1">
+      <span class="pt">Este documento explica, de forma simples e transparente, como a Oren utiliza este site, quais dados podem ser coletados e como tratamos essas informações em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).</span>
+      <span class="en">This document explains, in simple and transparent terms, how Oren operates this website, what data may be collected, and how we handle that information in accordance with Brazil's General Data Protection Law (LGPD — Law No. 13,709/2018).</span>
     </p>
-
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">
-        <span class="pt">Falar com Nossa Equipe</span>
-        <span class="en">Talk to Our Team</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="#ecosystem" class="btn-ghost">
-        <span class="pt">Conhecer o Ecossistema</span>
-        <span class="en">Explore the Ecosystem</span>
-      </a>
-    </div>
-  </div>
-
-  <div class="hero-scroll" aria-hidden="true">
-    <div class="scroll-line"></div>
+    <p class="legal-updated">
+      <span class="pt">Última atualização: junho de 2026</span>
+      <span class="en">Last updated: June 2026</span>
+    </p>
+    <nav class="legal-toc" aria-label="Sumário">
+      <a href="#termos"><span class="pt">Termos de Uso</span><span class="en">Terms of Use</span></a>
+      <a href="#privacidade"><span class="pt">Privacidade & Dados</span><span class="en">Privacy & Data</span></a>
+      <a href="#cookies"><span class="pt">Cookies</span><span class="en">Cookies</span></a>
+      <a href="#direitos"><span class="pt">Seus Direitos (LGPD)</span><span class="en">Your Rights (LGPD)</span></a>
+      <a href="#contato-legal"><span class="pt">Contato</span><span class="en">Contact</span></a>
+    </nav>
   </div>
 </section>
 
-
-<!-- ═══ ABOUT / MANIFESTO ═══ -->
-<section id="about">
-  <svg class="about-rings" width="640" height="640" viewBox="0 0 640 640" aria-hidden="true">
-    <circle cx="320" cy="320" r="110" stroke-width="1"/>
-    <circle cx="320" cy="320" r="185" stroke-width="0.8"/>
-    <circle cx="320" cy="320" r="265" stroke-width="0.5"/>
-    <circle cx="320" cy="320" r="315" stroke-width="0.3"/>
-  </svg>
-
+<section class="legal-content">
   <div class="container">
-    <div class="eyebrow reveal">
-      <span class="pt">Manifesto</span><span class="en">Manifesto</span>
-    </div>
 
-    <div class="about-grid">
-      <div>
-        <div class="clip-reveal reveal">
-          <h2 class="heading-display">
-            <span class="pt">Raízes profundas,<br>crescimento <em>sem limites</em></span>
-            <span class="en">Deep roots,<br>growth <em>without limits</em></span>
-          </h2>
-        </div>
-
-        <p class="manifesto-quote reveal d1">
-          <span class="pt">"Oren é o pinheiro em hebraico, uma árvore que cresce em terrenos áridos, resiste ao inverno e prospera onde outras espécies não conseguem."</span>
-          <span class="en">"Oren is the pine in Hebrew, a tree that grows in arid ground, withstands winter, and thrives where other species cannot."</span>
-        </p>
-
-        <p class="about-body reveal d2">
-          <span class="pt">Somos mais do que uma holding. Somos a base que dá coesão, credibilidade e visão de longo prazo a cada empresa do grupo. Conectamos capital, tecnologia e presença global para construir um legado. Em cada operação, em cada mercado, em cada decisão, Oren é o caminho.</span>
-          <span class="en">We are more than a holding company. We are the foundation that gives cohesion, credibility, and long-term vision to each company in the group. We connect capital, technology, and global presence to build a legacy. In every operation, every market, every decision, Oren is the way.</span>
-        </p>
-      </div>
-
-      <!-- Pine visual with glow -->
-      <div class="pine-visual reveal d2" aria-hidden="true">
-        <div class="pine-glow"></div>
-        <video class="pine-video" muted playsinline preload="auto" poster="assets/oren-full-poster.png">
-          <source src="assets/oren-full.webm" type="video/webm">
-        </video>
-      </div>
-    </div>
-
-    <!-- Pillars -->
-    <div class="pillars">
-      <div class="pillar reveal d1">
-        <p class="pillar-eye"><span class="pt">O Que Fazemos</span><span class="en">What We Do</span></p>
-        <h3><span class="pt">Negócios que conectam mundos</span><span class="en">Businesses that connect worlds</span></h3>
-        <p><span class="pt">Uma holding que, através de suas empresas, apresenta soluções inteligentes para gestão de recursos, transferências e a construção de um legado global.</span><span class="en">A holding that, through its companies, delivers intelligent solutions for resource management, transfers, and the construction of a global legacy.</span></p>
-      </div>
-      <div class="pillar reveal d2">
-        <p class="pillar-eye"><span class="pt">Como Operamos</span><span class="en">How We Operate</span></p>
-        <h3><span class="pt">Autonomia com visão unificada</span><span class="en">Autonomy with unified vision</span></h3>
-        <p><span class="pt">Cada empresa opera de forma independente, líder em sua vertical, governada com disciplina de capital e inteligência estratégica.</span><span class="en">Each company operates independently, leading in its vertical, governed with capital discipline and strategic intelligence.</span></p>
-      </div>
-      <div class="pillar reveal d3">
-        <p class="pillar-eye"><span class="pt">Por Que Existimos</span><span class="en">Why We Exist</span></p>
-        <h3><span class="pt">Valor real de longo prazo</span><span class="en">Real long-term value</span></h3>
-        <p><span class="pt">Valor real só é criado quando capital, tecnologia e presença global estão unidos por uma visão ampla e futurista.</span><span class="en">Real value is only created when capital, technology, and global presence are united by a broad, forward-looking vision.</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══ ECOSYSTEM ═══ -->
-<section id="ecosystem">
-  <div class="container">
-    <div class="eco-header">
-      <div>
-        <div class="eyebrow reveal"><span class="pt">Ecossistema</span><span class="en">Ecosystem</span></div>
-        <h2 class="heading-display reveal">
-          <span class="pt">Três empresas.<br>Um ecossistema.</span>
-          <span class="en">Three companies.<br>One ecosystem.</span>
-        </h2>
-      </div>
-      <p class="lead reveal d1" style="max-width:340px; align-self:flex-end; padding-bottom:8px">
-        <span class="pt">Cada marca opera com autonomia e propósito próprio, conectada pela visão e estrutura da Oren.</span>
-        <span class="en">Each brand operates with its own autonomy and purpose, connected by Oren's vision and structure.</span>
+    <div class="legal-block" id="termos">
+      <h2><span class="pt">1. Termos de Uso</span><span class="en">1. Terms of Use</span></h2>
+      <p>
+        <span class="pt">Ao acessar e navegar no site da Oren ("nós", "nosso" ou "Oren"), você concorda com os termos descritos abaixo. Este site tem caráter institucional e tem por objetivo apresentar a Oren e as empresas do nosso ecossistema — UaiPay, Bateia Capital e BTS Global Corp.</span>
+        <span class="en">By accessing and browsing Oren's website ("we", "our" or "Oren"), you agree to the terms described below. This site is institutional in nature and aims to present Oren and the companies in our ecosystem — UaiPay, Bateia Capital and BTS Global Corp.</span>
+      </p>
+      <p>
+        <span class="pt">O conteúdo deste site — incluindo textos, marcas, logotipos, imagens e elementos visuais — é de propriedade da Oren ou de seus licenciadores, sendo protegido por leis de propriedade intelectual. É vedada a reprodução, distribuição ou uso comercial sem autorização prévia por escrito.</span>
+        <span class="en">The content of this site — including text, brands, logos, images and visual elements — is owned by Oren or its licensors and is protected by intellectual property laws. Reproduction, distribution or commercial use without prior written authorization is prohibited.</span>
+      </p>
+      <p>
+        <span class="pt">As informações disponibilizadas têm caráter institucional e informativo, não constituindo oferta, recomendação de investimento, consultoria financeira, jurídica ou contábil. Decisões de negócio devem ser tomadas após contato direto com nossa equipe e análise de seus assessores.</span>
+        <span class="en">The information provided is institutional and informational in nature and does not constitute an offer, investment recommendation, or financial, legal or accounting advice. Business decisions should be made after direct contact with our team and review by your own advisors.</span>
+      </p>
+      <p>
+        <span class="pt">A Oren poderá alterar este site e seus termos a qualquer momento, sem aviso prévio, sendo recomendável a consulta periódica desta página.</span>
+        <span class="en">Oren may change this site and these terms at any time without prior notice; we recommend checking this page periodically.</span>
       </p>
     </div>
 
-    <div class="eco-cards">
-      <!-- UaiPay -->
-      <article class="company-card reveal d1">
-        <div class="card-shine"></div>
-        <div class="card-bottom-line"></div>
-        <img src="assets/uaipay-logo.png" alt="UaiPay" class="card-logo">
-        <p class="card-sector"><span class="pt">Infraestrutura Financeira</span><span class="en">Financial Infrastructure</span></p>
-        <h3 class="card-name">UaiPay</h3>
-        <p class="card-desc">
-          <span class="pt">Soluções de transferências e infraestrutura financeira que conectam o Brasil ao mundo com velocidade, segurança e eficiência operacional.</span>
-          <span class="en">Transfer solutions and financial infrastructure connecting Brazil to the world with speed, security, and operational efficiency.</span>
-        </p>
-        <a href="https://uaipay.app" target="_blank" rel="noopener" class="card-link">
-          <span class="pt">Saiba mais</span><span class="en">Learn more</span>
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </article>
+    <div class="legal-block" id="privacidade">
+      <h2><span class="pt">2. Privacidade & Tratamento de Dados</span><span class="en">2. Privacy & Data Handling</span></h2>
+      <p>
+        <span class="pt">A Oren respeita a sua privacidade e está comprometida com a proteção dos dados pessoais tratados por meio deste site, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).</span>
+        <span class="en">Oren respects your privacy and is committed to protecting the personal data processed through this website, in accordance with Brazil's General Data Protection Law (LGPD — Law No. 13,709/2018).</span>
+      </p>
 
-      <!-- Bateia Capital -->
-      <article class="company-card reveal d2">
-        <div class="card-shine"></div>
-        <div class="card-bottom-line"></div>
-        <img src="assets/bateia-logo.png" alt="Bateia Capital" class="card-logo">
-        <p class="card-sector"><span class="pt">Investimentos & Capital</span><span class="en">Investments & Capital</span></p>
-        <h3 class="card-name">Bateia Capital</h3>
-        <p class="card-desc">
-          <span class="pt">Investimentos, gestão de capital e crédito lastreado em ativos imobiliários, transformando imóveis no Brasil em crédito nos Estados Unidos.</span>
-          <span class="en">Investments, capital management, and real estate-backed credit, turning Brazilian real estate into US credit.</span>
-        </p>
-        <a href="https://bateiacapital.us" target="_blank" rel="noopener" class="card-link">
-          <span class="pt">Saiba mais</span><span class="en">Learn more</span>
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </article>
+      <h3><span class="pt">2.1 Quais dados podem ser coletados</span><span class="en">2.1 What data may be collected</span></h3>
+      <ul>
+        <li><span class="pt">Dados de contato fornecidos voluntariamente, como nome, e-mail, empresa e mensagem, quando você utiliza nosso formulário de contato;</span><span class="en">Contact information you voluntarily provide, such as name, email, company and message, when using our contact form;</span></li>
+        <li><span class="pt">Dados de navegação, como tipo de dispositivo, navegador, páginas visitadas e tempo de permanência, coletados de forma automática para fins estatísticos e de melhoria da experiência;</span><span class="en">Browsing data, such as device type, browser, pages visited and time on page, collected automatically for statistical purposes and to improve the user experience;</span></li>
+        <li><span class="pt">Não coletamos dados sensíveis (como origem racial, convicções religiosas, dados de saúde ou biometria) por meio deste site.</span><span class="en">We do not collect sensitive data (such as racial origin, religious beliefs, health data or biometrics) through this website.</span></li>
+      </ul>
 
-      <!-- BTS Global Corp -->
-      <article class="company-card reveal d3">
-        <div class="card-shine"></div>
-        <div class="card-bottom-line"></div>
-        <img src="assets/bts-logo-new.png" alt="BTS Global" class="card-logo">
-        <p class="card-sector"><span class="pt">Infraestrutura Operacional</span><span class="en">Operational Infrastructure</span></p>
-        <h3 class="card-name">BTS Global Corp</h3>
-        <p class="card-desc">
-          <span class="pt">Uma camada única que substitui múltiplos fornecedores: orquestração de entidades, documentação em blockchain e inteligência regulatória global.</span>
-          <span class="en">A single layer replacing multiple suppliers: entity orchestration, blockchain-verified documentation, and global regulatory intelligence.</span>
-        </p>
-        <a href="https://btsglobalcorp.com" target="_blank" rel="noopener" class="card-link">
-          <span class="pt">Saiba mais</span><span class="en">Learn more</span>
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </article>
+      <h3><span class="pt">2.2 Como utilizamos os dados</span><span class="en">2.2 How we use the data</span></h3>
+      <ul>
+        <li><span class="pt">Para responder a contatos, dúvidas e solicitações enviadas pelo formulário do site;</span><span class="en">To respond to contacts, questions and requests submitted through the website form;</span></li>
+        <li><span class="pt">Para entender como o site é utilizado e melhorar seu conteúdo, navegação e desempenho;</span><span class="en">To understand how the site is used and improve its content, navigation and performance;</span></li>
+        <li><span class="pt">Para cumprir obrigações legais e regulatórias aplicáveis às empresas do ecossistema Oren.</span><span class="en">To comply with legal and regulatory obligations applicable to the companies in the Oren ecosystem.</span></li>
+      </ul>
+
+      <h3><span class="pt">2.3 Compartilhamento de dados</span><span class="en">2.3 Data sharing</span></h3>
+      <p>
+        <span class="pt">Não vendemos dados pessoais a terceiros. Os dados coletados podem ser compartilhados com empresas do nosso ecossistema (UaiPay, Bateia Capital e BTS Global Corp) e com prestadores de serviço que nos auxiliam na operação do site (como hospedagem e ferramentas de e-mail), sempre limitados ao necessário e sob obrigações de confidencialidade.</span>
+        <span class="en">We do not sell personal data to third parties. Collected data may be shared with companies in our ecosystem (UaiPay, Bateia Capital and BTS Global Corp) and with service providers that help us operate the site (such as hosting and email tools), always limited to what is necessary and under confidentiality obligations.</span>
+      </p>
+
+      <h3><span class="pt">2.4 Armazenamento e segurança</span><span class="en">2.4 Storage and security</span></h3>
+      <p>
+        <span class="pt">Adotamos medidas técnicas e organizacionais razoáveis para proteger os dados coletados contra acessos não autorizados, perda, alteração ou divulgação indevida. Os dados são mantidos pelo tempo necessário para cumprir as finalidades descritas nesta política ou conforme exigido por lei.</span>
+        <span class="en">We adopt reasonable technical and organizational measures to protect collected data against unauthorized access, loss, alteration or improper disclosure. Data is retained for as long as necessary to fulfill the purposes described in this policy or as required by law.</span>
+      </p>
     </div>
+
+    <div class="legal-block" id="cookies">
+      <h2><span class="pt">3. Cookies</span><span class="en">3. Cookies</span></h2>
+      <p>
+        <span class="pt">Este site pode utilizar cookies e tecnologias similares para garantir seu funcionamento adequado e para coletar estatísticas de uso de forma anônima ou agregada. Você pode gerenciar ou desativar cookies diretamente nas configurações do seu navegador, embora isso possa afetar algumas funcionalidades do site.</span>
+        <span class="en">This site may use cookies and similar technologies to ensure proper functioning and to collect usage statistics in an anonymous or aggregated way. You can manage or disable cookies directly in your browser settings, though this may affect some site functionality.</span>
+      </p>
+    </div>
+
+    <div class="legal-block" id="direitos">
+      <h2><span class="pt">4. Seus Direitos como Titular de Dados</span><span class="en">4. Your Rights as a Data Subject</span></h2>
+      <p>
+        <span class="pt">Nos termos da LGPD, você tem o direito de, mediante solicitação:</span>
+        <span class="en">Under the LGPD, you have the right to, upon request:</span>
+      </p>
+      <ul>
+        <li><span class="pt">Confirmar a existência de tratamento dos seus dados pessoais;</span><span class="en">Confirm whether we process your personal data;</span></li>
+        <li><span class="pt">Acessar os dados que mantemos sobre você;</span><span class="en">Access the data we hold about you;</span></li>
+        <li><span class="pt">Corrigir dados incompletos, inexatos ou desatualizados;</span><span class="en">Correct incomplete, inaccurate or outdated data;</span></li>
+        <li><span class="pt">Solicitar a anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desconformidade com a LGPD;</span><span class="en">Request anonymization, blocking or deletion of unnecessary data or data processed in violation of the LGPD;</span></li>
+        <li><span class="pt">Solicitar a portabilidade dos dados a outro fornecedor de serviço, mediante requisição expressa;</span><span class="en">Request data portability to another service provider, upon express request;</span></li>
+        <li><span class="pt">Revogar o consentimento previamente fornecido, a qualquer momento.</span><span class="en">Withdraw previously given consent, at any time.</span></li>
+      </ul>
+      <p>
+        <span class="pt">Para exercer qualquer um desses direitos, entre em contato pelo canal indicado abaixo.</span>
+        <span class="en">To exercise any of these rights, please get in touch through the channel indicated below.</span>
+      </p>
+    </div>
+
+    <div class="legal-block" id="contato-legal">
+      <h2><span class="pt">5. Contato</span><span class="en">5. Contact</span></h2>
+      <p>
+        <span class="pt">Em caso de dúvidas sobre estes Termos de Uso, sobre a Política de Privacidade ou sobre o tratamento dos seus dados pessoais, entre em contato com a Oren pelo e-mail <a href="mailto:contact@orencorp.com">contact@orencorp.com</a>.</span>
+        <span class="en">If you have any questions about these Terms of Use, the Privacy Policy, or the processing of your personal data, please contact Oren at <a href="mailto:contact@orencorp.com">contact@orencorp.com</a>.</span>
+      </p>
+    </div>
+
   </div>
 </section>
 
-
-
-<!-- ═══ CONTACT ═══ -->
-<section id="contact">
-  <div class="container">
-    <div class="eyebrow reveal"><span class="pt">Contato</span><span class="en">Contact</span></div>
-    <h2 class="heading-display reveal">
-      <span class="pt">Vamos construir<br>juntos?</span>
-      <span class="en">Ready to build<br>together?</span>
-    </h2>
-
-    <div class="contact-grid">
-      <form class="form reveal d1" id="contactForm" onsubmit="handleSubmit(event)" novalidate>
-        <div class="form-row">
-          <div class="field">
-            <label for="fname"><span class="pt">Nome</span><span class="en">Name</span></label>
-            <input type="text" id="fname" name="name" placeholder="João Silva" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="femail">E-mail</label>
-            <input type="email" id="femail" name="email" placeholder="joao@empresa.com" autocomplete="email" required>
-          </div>
-        </div>
-        <div class="field">
-          <label for="fcompany"><span class="pt">Empresa</span><span class="en">Company</span></label>
-          <input type="text" id="fcompany" name="company" placeholder="Sua Empresa S.A." autocomplete="organization">
-        </div>
-        <div class="field">
-          <label for="finterest"><span class="pt">Área de Interesse</span><span class="en">Area of Interest</span></label>
-          <select id="finterest" name="interest">
-            <option value="" disabled selected data-pt="— Selecione —" data-en="— Select one —">— Selecione —</option>
-            <option value="uaipay"  data-pt="UaiPay — Transferências e Pagamentos" data-en="UaiPay — Transfers & Payments">UaiPay — Transferências e Pagamentos</option>
-            <option value="bateia" data-pt="Bateia Capital — Investimentos & Crédito" data-en="Bateia Capital — Investments & Credit">Bateia Capital — Investimentos & Crédito</option>
-            <option value="bts"    data-pt="BTS Global Corp — Infraestrutura Global" data-en="BTS Global Corp — Global Infrastructure">BTS Global Corp — Infraestrutura Global</option>
-            <option value="oren"   data-pt="Oren Holding — Parceria Estratégica" data-en="Oren Holding — Strategic Partnership">Oren Holding — Parceria Estratégica</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="fmsg"><span class="pt">Mensagem</span><span class="en">Message</span></label>
-          <textarea id="fmsg" name="message" placeholder="Como podemos ajudar?"></textarea>
-        </div>
-        <button type="submit" class="btn-submit" id="submitBtn">
-          <span class="pt">Enviar Mensagem</span>
-          <span class="en">Send Message</span>
-        </button>
-      </form>
-
-      <div class="contact-aside reveal d2">
-        <p class="aside-intro">
-          <span class="pt">Seja para investir, fazer parceria ou conhecer o ecossistema Oren, nossa equipe está pronta para uma conversa direta e sem burocracia.</span>
-          <span class="en">Whether to invest, partner, or explore the Oren ecosystem, our team is ready for a direct, no-bureaucracy conversation.</span>
-        </p>
-
-        <div class="contact-row">
-          <span class="contact-key">E-mail</span>
-          <span class="contact-val">contact@orencorp.com</span>
-        </div>
-
-        <a href="mailto:contact@orencorp.com?subject=Agendar%20uma%20reuni%C3%A3o%20%7C%20Schedule%20a%20meeting" class="btn-schedule">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          <span class="pt">Agendar uma Reunião</span>
-          <span class="en">Schedule a Meeting</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <a href="#hero" class="nav-logo" style="text-decoration:none" aria-label="Voltar ao topo">
+        <a href="index.html#hero" class="nav-logo" style="text-decoration:none" aria-label="Voltar ao topo">
           <img src="assets/oren-icon.png" alt="" class="footer-logo-icon" aria-hidden="true">
           <span style="font-size:20px;font-weight:600;letter-spacing:-0.02em;font-family:var(--body)">Oren</span>
         </a>
@@ -1406,18 +1364,18 @@
       <div>
         <p class="footer-col-title"><span class="pt">Grupo</span><span class="en">Group</span></p>
         <ul class="footer-list">
-          <li><a href="#ecosystem">UaiPay</a></li>
-          <li><a href="#ecosystem">Bateia Capital</a></li>
-          <li><a href="#ecosystem">BTS Global Corp</a></li>
+          <li><a href="index.html#ecosystem">UaiPay</a></li>
+          <li><a href="index.html#ecosystem">Bateia Capital</a></li>
+          <li><a href="index.html#ecosystem">BTS Global Corp</a></li>
         </ul>
       </div>
 
       <div>
         <p class="footer-col-title"><span class="pt">Empresa</span><span class="en">Company</span></p>
         <ul class="footer-list">
-          <li><a href="#about"><span class="pt">Sobre a Oren</span><span class="en">About Oren</span></a></li>
-          <li><a href="#ecosystem"><span class="pt">Ecossistema</span><span class="en">Ecosystem</span></a></li>
-          <li><a href="#contact"><span class="pt">Contato</span><span class="en">Contact</span></a></li>
+          <li><a href="index.html#about"><span class="pt">Sobre a Oren</span><span class="en">About Oren</span></a></li>
+          <li><a href="index.html#ecosystem"><span class="pt">Ecossistema</span><span class="en">Ecosystem</span></a></li>
+          <li><a href="index.html#contact"><span class="pt">Contato</span><span class="en">Contact</span></a></li>
         </ul>
       </div>
 
@@ -1437,7 +1395,6 @@
   </div>
 </footer>
 
-
 <script>
 /* ── LANGUAGE ── */
 function setLang(lang) {
@@ -1446,9 +1403,6 @@ function setLang(lang) {
     const active = btn.textContent.trim() === lang.toUpperCase();
     btn.classList.toggle('active', active);
     btn.setAttribute('aria-pressed', active);
-  });
-  document.querySelectorAll('select option[data-pt]').forEach(opt => {
-    opt.textContent = lang === 'en' ? opt.dataset.en : opt.dataset.pt;
   });
 }
 
@@ -1469,100 +1423,6 @@ const revealObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-/* ── PINE LOGO: play the assembly animation when it scrolls into view ── */
-const pineVideo = document.querySelector('.pine-video');
-if (pineVideo) {
-  const pineObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        pineVideo.currentTime = 0;
-        const p = pineVideo.play();
-        if (p) p.catch(() => {});
-        pineObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.4 });
-  pineObs.observe(pineVideo);
-}
-
-/* ── 3D CARD TILT ── */
-document.querySelectorAll('.company-card').forEach(card => {
-  const shine = card.querySelector('.card-shine');
-
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const cx = rect.width / 2;
-    const cy = rect.height / 2;
-    const rotX = ((y - cy) / cy) * -6;
-    const rotY = ((x - cx) / cx) * 8;
-
-    card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(4px)`;
-
-    const px = (x / rect.width) * 100;
-    const py = (y / rect.height) * 100;
-    shine.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(62,200,124,0.07), transparent 55%)`;
-  });
-
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-    shine.style.background = '';
-  });
-});
-
-/* ── FORM ── */
-/* Destination address for contact + scheduling. Swap for a Formspree
-   endpoint or Calendly URL when available. */
-const OREN_EMAIL = 'contact@orencorp.com';
-
-function handleSubmit(e) {
-  e.preventDefault();
-  const form = e.target;
-  const isEn = document.body.classList.contains('lang-en');
-
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
-
-  const data = new FormData(form);
-  const name = (data.get('name') || '').trim();
-  const email = (data.get('email') || '').trim();
-  const company = (data.get('company') || '').trim();
-  const interest = form.querySelector('#finterest');
-  const interestText = interest && interest.selectedIndex > 0
-    ? interest.options[interest.selectedIndex].textContent.trim() : '';
-  const message = (data.get('message') || '').trim();
-
-  const subject = isEn
-    ? `Contact from ${name || 'website'}`
-    : `Contato de ${name || 'site'}`;
-  const bodyLines = isEn
-    ? [`Name: ${name}`, `Email: ${email}`, `Company: ${company}`,
-       `Area of interest: ${interestText}`, '', message]
-    : [`Nome: ${name}`, `E-mail: ${email}`, `Empresa: ${company}`,
-       `Área de interesse: ${interestText}`, '', message];
-  const mailto = `mailto:${OREN_EMAIL}`
-    + `?subject=${encodeURIComponent(subject)}`
-    + `&body=${encodeURIComponent(bodyLines.join('\n'))}`;
-
-  window.location.href = mailto;
-
-  const btn = document.getElementById('submitBtn');
-  btn.textContent = isEn ? '✓ Opening your email…' : '✓ Abrindo seu e-mail…';
-  btn.disabled = true;
-  btn.style.background = 'var(--g600)';
-  setTimeout(() => {
-    btn.innerHTML = isEn
-      ? '<span class="en">Send Message</span>'
-      : '<span class="pt">Enviar Mensagem</span>';
-    btn.disabled = false;
-    btn.style.background = '';
-    form.reset();
-  }, 3500);
-}
 </script>
 </body>
 </html>
